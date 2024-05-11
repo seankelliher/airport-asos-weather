@@ -1,0 +1,424 @@
+body {
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+header {
+    width: 90%;
+    margin: 0;
+    padding: 0 5%;
+    background: #122459;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2000px;
+    left: 100%;
+    background: #122459;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2000px;
+    right: 100%;
+    background: #122459;
+}
+
+.date {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    text-align: left;
+}
+
+.time {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    text-align: right;
+}
+
+nav {
+    width: 90%;
+    margin: 0;
+    padding: 0 5%;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form {
+    width: 30%;
+    margin: 2em 0;
+    padding: 0;
+    background: #f5f5f5;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+fieldset {
+    width: 90%;
+    margin-top: 0.5em;
+    padding: 1em 5%;
+    border: none;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+legend {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #1a1c1e;
+}
+
+input {
+    width: 1.8em;
+    margin: 0;
+    padding: 0.5em 0.25em;
+    border: 1px solid #212121;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+input[type="text"] {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #1a1c1e;
+}
+
+input::placeholder {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #bdbdbd;
+}
+
+.form-btns {
+    width: 90%;
+    margin: 0;
+    padding: 1em 5%;
+    border: none;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-go {
+    width: 20%;
+    margin: 0;
+    background: #f0432a;
+    border: none;
+    border-radius: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.btn-clear {
+    width: 20%;
+    background: #bdbdbd;
+    border: none;
+    border-radius: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+main {
+    width: 90%;
+    margin: 0;
+    padding: 0 5%;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.returned-airports {
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.airport {
+    width: 90%;
+    margin: 0;
+    padding: 0 5%;
+    background: #f5f5f5;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.airport-details {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+}
+
+.airport-btns {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 1em;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btn-flight-type {
+    width: 25%;
+    border: none;
+    border-radius: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Background & text colors */
+.departing {
+    background: #cde9f1;
+}
+
+.stopover {
+    background: #f1ebcd;
+}
+
+.destination {
+    background: #d0f1cd;
+}
+
+/* Container for returned airport's weather */
+.airport-weather {
+
+}
+
+/* Font styles and their media queries */
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #1a1c1e;
+}
+
+dt {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #1a1c1e;
+}
+
+dd {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #1a1c1e;
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #001e2f;
+    padding: 0.25em;
+}
+
+h1{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #fff;
+}
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #fff;
+}
+
+h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #1a1c1e;
+}
+
+/* Media queries for fonts */
+@media (min-width: 300px) and (max-width: 399px) {
+    p {
+        font-size: 0.875em; /* 14px */
+    }
+
+    dt, dd, figcaption {
+        font-size: 0.8125em; /* 13px */
+    }
+
+    h1 {
+        font-size: 1.125em; /* 18 px */
+    }
+
+    h2 {
+        font-size: 1em; /* 16px */
+    }
+
+    h3 {
+        font-size: 0.875em; /* 14px */
+    }
+
+    legend, legend, select, input::placeholder, input[type="text"], .btn-go, .btn-clear {
+        font-size: 0.875em; /* 14px */
+    }
+
+    .btn-flight-type {
+         font-size: 0.8125em; /* 13px */
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    p {
+        font-size: 0.9375em; /* 15px */
+    }
+
+    dt, dd, figcaption {
+        font-size: 0.875em; /* 14px */
+    }
+
+    h1 {
+        font-size: 1.1875em; /* 19px */
+    }
+
+    h2 {
+        font-size: 1.0625em; /* 17px */
+    }
+
+    h3 {
+        font-size: 0.9375em; /* 15px */
+    }
+
+    legend, legend, select, input::placeholder, input[type="text"], .btn-go, .btn-clear {
+        font-size: 0.9375em; /* 15px */
+    }
+
+    .btn-flight-type {
+         font-size: 0.8125em; /* 13px */
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    p {
+        font-size: 1em; /* 16px */
+    }
+
+    dt, dd, figcaption {
+        font-size: 0.9375em; /* 15px */
+    }
+
+    h1 {
+        font-size: 1.25em; /* 20px */
+    }
+
+    h2 {
+        font-size: 1.125em; /* 18 px */
+    }
+
+    h3 {
+        font-size: 1em; /* 16px */
+    }
+
+    legend, legend, select, input::placeholder, input[type="text"], .btn-go, .btn-clear {
+        font-size: 1em; /* 16px */
+    }
+
+    .btn-flight-type {
+         font-size: 0.8125em; /* 13px */
+    }
+}
+
+@media (min-width: 600px) {
+    p {
+        font-size: 1.0625em; /* 17px */
+    }
+
+    dt, dd, figcaption {
+        font-size: 1em; /* 16px */
+    }
+
+    h1 {
+        font-size: 1.3125em; /* 21px */
+    }
+
+    h2 {
+        font-size: 1.1875em; /* 19px */
+    }
+
+    h3 {
+        font-size: 1.0625em; /* 17px */
+    }
+
+    legend, legend, select, input::placeholder, input[type="text"], .btn-go, .btn-clear {
+        font-size: 1.0625em; /* 17px */
+    }
+
+    .btn-flight-type {
+         font-size: 0.8125em; /* 13px */
+    }
+}
