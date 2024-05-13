@@ -37,19 +37,10 @@ header::before {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 2000px;
-    left: 100%;
+    right: calc((100vw - 100%) / -2);
+    left: calc((100vw - 100%) / -2);
     background: #122459;
-}
-
-header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2000px;
-    right: 100%;
-    background: #122459;
+    z-index: -1;
 }
 
 .date {
@@ -114,7 +105,7 @@ legend {
 }
 
 input {
-    width: 1.8em;
+    width: 2.2em;
     margin: 0;
     padding: 0.5em 0.25em;
     border: 1px solid #212121;
@@ -178,7 +169,6 @@ main {
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
-
 }
 
 .returned-airports {
@@ -190,6 +180,14 @@ main {
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.about-asos {
+    width: 90%;
+    margin: 2em 0;
+    padding: 0 5%;
+    background: #f5f5f5;
+    flex: initial;
 }
 
 .airport {
