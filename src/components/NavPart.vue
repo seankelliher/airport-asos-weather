@@ -1,8 +1,12 @@
 <script setup>
 // import { states } from "../data/states-list.js";
-const searchTerm = defineModel("searchTerm");
+const asosCode1 = defineModel("asosCode1");
+const asosCode2 = defineModel("asosCode2");
+const asosCode3 = defineModel("asosCode3");
+const asosCode4 = defineModel("asosCode4");
 
-defineEmits(["runSearchTerm", "clearSearchTerm"]);
+defineEmits(["runCode", "clearCode"]);
+
 </script>
 
 <template>
@@ -15,7 +19,9 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
                     id="asos1"
                     name="asos1"
                     type="text"
-                    v-model="searchTerm1"
+                    v-model="asosCode1"
+                    minlength="1"
+                    maxlength="1"
                     placeholder="K"
                 >
 
@@ -24,7 +30,9 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
                     id="asos2"
                     name="asos2"
                     type="text"
-                    v-model="searchTerm2"
+                    v-model="asosCode2"
+                    minlength="1"
+                    maxlength="1"
                     placeholder="L"
                 >
 
@@ -33,7 +41,9 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
                     id="asos3"
                     name="asos3"
                     type="text"
-                    v-model="searchTerm3"
+                    v-model="asosCode3"
+                    minlength="1"
+                    maxlength="1"
                     placeholder="A"
                 >
 
@@ -42,21 +52,23 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
                     id="asos4"
                     name="asos4"
                     type="text"
-                    v-model="searchTerm4"
+                    v-model="asosCode4"
+                    minlength="1"
+                    maxlength="1"
                     placeholder="X"
                 >
             </fieldset>
 
             <div class="form-btns">
                 <button
-                    @click="$emit('clearSearchTerm')"
+                    @click="$emit('clearCode')"
                     class="btn-clear"
                 >
                     Clear
                 </button>
                 <button
                     type="submit"
-                    @click="$emit('runSearchTerm', searchTerm)"
+                    @click="$emit('runCode')"
                     class="btn-go"
                 >
                     Go
