@@ -53,9 +53,35 @@ function clearCode() {
                     <button class="btn-flight-type stopover">Stopover</button>
                     <button class="btn-flight-type destination">Destination</button>
                 </div>
+                <div class="airport-icon">
+                    <figure class="icon">
+                        <img src="/add-icon-24.svg" alt="plus icont to add item">
+                    </figure>
+                </div>
             </div>
             <AboutAsos />
         </div>
+
+        <div class="added-airports">
+            <div class="added-airport">
+                <p>added airport</p>
+            </div>
+
+            <div class="added-airport">
+                <p>added airport</p>
+            </div>
+
+            <div class="added-airport">
+                <p>added airport</p>
+            </div>
+
+            <div class="added-airport">
+                <p>added airport</p>
+            </div>
+        </div>
+
+
+
     </main> 
 </template>
 
