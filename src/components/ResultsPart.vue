@@ -4,29 +4,37 @@ import NavPart from "./NavPart.vue";
 import AboutAsos from "./AboutAsos.vue";
 import { ref } from "vue";
 
+// Input boxes for "Airport Code" - single, combined.
 const ac1 = ref("");
 const ac2 = ref("");
 const ac3 = ref("");
 const ac4 = ref("");
 const acAll = ref("");
 
-const chosen = ref(117); // 117 is the index for KLAX.
-
+// User clicks "Go" button, invoke runCode function, save "returned" airport.
+const returnedAirport = ref(117); // 117 is the index for KLAX.
 function runCode() {
     acAll.value = `${ac1.value}${ac2.value}${ac3.value}${ac4.value}`;
     airports.forEach(function(airport) {
         if (acAll.value.toUpperCase() === airport.id) {
-            chosen.value = airports.indexOf(airport);
+            returnedAirport.value = airports.indexOf(airport);
         }
     });
 }
 
+// When user clicks "Clear" button.
 function clearCode() {
-    chosen.value = 117;
+    returnedAirport.value = 117;
     ac1.value = "";
     ac2.value = "";
     ac3.value = "";
     ac4.value = "";
+}
+
+// User clicks "+" symbol, invoke addAirport function, save "added" airport.
+const addedAirports = ref([]);
+function addAirport() {
+    addedAirports.value.push(returnedAirport.value);
 }
 </script>
 
@@ -44,8 +52,8 @@ function clearCode() {
             <div class="airport">
                 <div class="airport-details">
                     <dl>
-                        <dt>{{ airports[`${chosen}`].name }} - {{ airports[`${chosen}`].id }}</dt>
-                        <dd>{{ airports[`${chosen}`].city }}, {{ airports[`${chosen}`].stateAbr.toUpperCase() }}</dd>
+                        <dt>{{ airports[`${returnedAirport}`].name }} - {{ airports[`${returnedAirport}`].id }}</dt>
+                        <dd>{{ airports[`${returnedAirport}`].city }}, {{ airports[`${returnedAirport}`].stateAbr.toUpperCase() }}</dd>
                     </dl>
                 </div>
                 <div class="airport-btns">
@@ -55,7 +63,11 @@ function clearCode() {
                 </div>
                 <div class="airport-icon">
                     <figure class="icon">
-                        <img src="/add-icon-24.svg" alt="plus icont to add item">
+                        <img
+                            @click="addAirport()"
+                            src="/add-icon-24.svg"
+                            alt="plus icont to add item"
+                        >
                     </figure>
                 </div>
             </div>
@@ -64,24 +76,20 @@ function clearCode() {
 
         <div class="added-airports">
             <div class="added-airport">
-                <p>added airport</p>
+                {{ addedAirports }}
             </div>
-
-            <div class="added-airport">
-                <p>added airport</p>
-            </div>
-
-            <div class="added-airport">
-                <p>added airport</p>
-            </div>
-
-            <div class="added-airport">
-                <p>added airport</p>
+            <div
+                v-for="addedAirport in addedAirports"
+                :key="addedAirport"
+                class="added-airport"
+            >
+                <dl>
+                    <dt>{{ airports[addedAirport].id }}</dt>
+                    <dd>{{ airports[addedAirport].name }}</dd>
+                    <dd>{{ airports[addedAirport].city }}, {{ airports[addedAirport].stateAbr.toUpperCase() }}</dd>
+                </dl>
             </div>
         </div>
-
-
-
     </main> 
 </template>
 
