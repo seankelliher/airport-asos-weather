@@ -1,5 +1,6 @@
 <script setup>
 // import { states } from "../data/states-list.js";
+import { onMounted } from "vue";
 const asosCode1 = defineModel("asosCode1");
 const asosCode2 = defineModel("asosCode2");
 const asosCode3 = defineModel("asosCode3");
@@ -7,6 +8,20 @@ const asosCode4 = defineModel("asosCode4");
 
 defineEmits(["runCode", "clearCode"]);
 
+onMounted(()=> {
+    const one = document.getElementById("asos1");
+    one.focus();
+});
+
+function changeFocus(el) {
+    const input = document.getElementById(el);
+    input.focus();
+}
+
+function blurFocus(el) {
+    const input = document.getElementById(el);
+    input.blur();
+}
 </script>
 
 <template>
@@ -22,6 +37,7 @@ defineEmits(["runCode", "clearCode"]);
                 minlength="1"
                 maxlength="1"
                 placeholder="K"
+                @keyup="changeFocus('asos2')"
             >
 
             <label for="asos2" hidden>airport code, second letter</label>
@@ -33,6 +49,7 @@ defineEmits(["runCode", "clearCode"]);
                 minlength="1"
                 maxlength="1"
                 placeholder="L"
+                @keyup="changeFocus('asos3')"
             >
 
             <label for="asos3" hidden>airport code, third letter</label>
@@ -44,6 +61,7 @@ defineEmits(["runCode", "clearCode"]);
                 minlength="1"
                 maxlength="1"
                 placeholder="A"
+                @keyup="changeFocus('asos4')"
             >
 
             <label for="asos4" hidden>airport code, fourth letter</label>
@@ -55,6 +73,7 @@ defineEmits(["runCode", "clearCode"]);
                 minlength="1"
                 maxlength="1"
                 placeholder="X"
+                @keyup="changeFocus('btn-submit')"
             >
         </fieldset>
 
@@ -66,8 +85,9 @@ defineEmits(["runCode", "clearCode"]);
                 Clear
             </button>
             <button
+                id="btn-submit"
                 type="submit"
-                @click="$emit('runCode')"
+                @click="[$emit('runCode'), blurFocus('btn-submit')]"
                 class="btn-go"
             >
                 Go
